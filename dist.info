@@ -1,0 +1,11 @@
+--- This file is part of LuaDist project
+
+name = "fcgi"
+version = "2.4.0"
+
+desc = "FastCGI is simple because it is actually CGI with only a few extensions."
+author = "Open Market, Rob Saccoccio & others"
+license = "Open Market"
+url = "http://www.fastcgi.com"
+maintainer = "Peter Drahoš"
+
