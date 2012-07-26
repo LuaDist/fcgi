@@ -23,8 +23,8 @@ check_symbol_exists ( fileno "stdio.h" HAVE_FILENO_PROTO )
 check_symbol_exists ( fpos_t "stdio.h" HAVE_FILENO_PROTO )
 check_include_files ( inttypes.h HAVE_INTTYPES_H )
 #2DO: HAVE_IOSTREAM_WITHASSIGN_STREAMBUF
-check_library_exists( nsl "" "" HAVE_LIBNSL )
-check_library_exists( socket "" "" HAVE_LIBSOCKET )
+check_library_exists ( nsl "" "" HAVE_LIBNSL )
+check_library_exists ( socket "" "" HAVE_LIBSOCKET )
 check_include_files ( limits.h HAVE_LIMITS_H )
 check_include_files ( memory.h HAVE_MEMORY_H )
 check_include_files ( netdb.h HAVE_NETDB_H )
@@ -49,7 +49,7 @@ set ( PACKAGE "${DIST_NAME}" )
 #2DO: PTHREAD_CREATE_JOINABLE
 check_include_files ( "stdlib.h;stdarg.h;string.h;float.h" STDC_HEADERS )
 #USE_LOCKING	
-set ( VERSION ${DIST_VERSION} )	
+set ( VERSION ${DIST_VERSION} )
 #2DO: /* Define to empty if `const' does not conform to ANSI C. */
 #cmakedefine const
 
@@ -58,10 +58,10 @@ set ( VERSION ${DIST_VERSION} )
 
 #/* Define to `int' if <sys/types.h> does not define. */
 #undef off_t
-check_symbol_exists(ssize_t "sys/types.h" SSIZE_T )
+check_symbol_exists ( ssize_t "sys/types.h" SSIZE_T )
 if ( NOT SSIZE_T )
-	set ( SSIZE_T "int" )
-endif ()
+  set ( SSIZE_T "int" )
+endif ( )
 
 # all is defined, so generate config.h
 configure_file ( ${CMAKE_CURRENT_SOURCE_DIR}/fcgi_config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/fcgi_config.h )
@@ -75,33 +75,24 @@ include_directories ( ${CMAKE_CURRENT_BINARY_DIR} )
 ###########################################################################################
 
 if ( WIN32 AND NOT CYGWIN )
-	set ( SRC libfcgi/os_win32.c )
-else ()
-	set ( SRC libfcgi/os_unix.c )
-endif ()
+  set ( SRC libfcgi/os_win32.c )
+else ( )
+  set ( SRC libfcgi/os_unix.c )
+endif ( )
 
 # Quick environ fix without need to patch
 if ( APPLE )
-	add_definitions ( -Denviron=\(*_NSGetEnviron\(\)\) )
-endif ()
+  add_definitions ( -Denviron=\(*_NSGetEnviron\(\)\) )
+endif ( )
 
-set ( SRC ${SRC} 
-	libfcgi/fcgi_stdio.c
-	libfcgi/fcgiapp.c
-	libfcgi/fcgio.cpp
-)
+set ( SRC ${SRC} libfcgi/fcgi_stdio.c libfcgi/fcgiapp.c libfcgi/fcgio.cpp )
 
-include_directories(include)
-add_library(fcgi SHARED ${SRC})
+include_directories ( include )
+add_library ( fcgi ${SRC} )
 
 install_library ( fcgi )
 install_data ( LICENSE.TERMS )
-install_header ( include/fastcgi.h
-	include/fcgi_stdio.h
-	include/fcgiapp.h
-	include/fcgimisc.h
-	include/fcgio.h
-	include/fcgios.h
-)
+install_header ( include/fastcgi.h include/fcgi_stdio.h include/fcgiapp.h include/fcgimisc.h 
+  include/fcgio.h include/fcgios.h )
 install_doc ( doc/ )
 install_example ( examples/ )
