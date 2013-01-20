@@ -76,6 +76,7 @@ include_directories ( ${CMAKE_CURRENT_BINARY_DIR} )
 
 if ( WIN32 AND NOT CYGWIN )
   set ( SRC libfcgi/os_win32.c )
+  set ( LIB_SOCKET ws2_32 )
 else ( )
   set ( SRC libfcgi/os_unix.c )
 endif ( )
@@ -89,6 +90,7 @@ set ( SRC ${SRC} libfcgi/fcgi_stdio.c libfcgi/fcgiapp.c libfcgi/fcgio.cpp )
 
 include_directories ( include )
 add_library ( fcgi ${SRC} )
+target_link_libraries( fcgi ${LIB_SOCKET} )
 
 install_library ( fcgi )
 install_data ( LICENSE.TERMS )
