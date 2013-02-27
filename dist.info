@@ -1,0 +1,78 @@
+type = "x86_64"
+arch = "Ubuntu"
+author = "Open Market, Rob Saccoccio & others"
+desc = "FastCGI is simple because it is actually CGI with only a few extensions."
+name = "fcgi"
+maintainer = "Peter Drahoš"
+files = {
+Runtime = {
+[[lib/libfcgi.so]],
+}
+,
+Header = {
+[[include/fastcgi.h]],
+[[include/fcgi_stdio.h]],
+[[include/fcgiapp.h]],
+[[include/fcgimisc.h]],
+[[include/fcgio.h]],
+[[include/fcgios.h]],
+}
+,
+Documentation = {
+[[share/fcgi/doc//FCGI_Finish.3]],
+[[share/fcgi/doc//fastcgi-whitepaper/fastcgi.htm]],
+[[share/fcgi/doc//fastcgi-whitepaper/img00002.gif]],
+[[share/fcgi/doc//fastcgi-whitepaper/img00001.gif]],
+[[share/fcgi/doc//fastcgi-whitepaper/img00003.gif]],
+[[share/fcgi/doc//fcgi-perf.htm]],
+[[share/fcgi/doc//fcgi-tcl.htm]],
+[[share/fcgi/doc//FCGI_StartFilterData.3]],
+[[share/fcgi/doc//fastcgi-prog-guide/ch1intra.gif]],
+[[share/fcgi/doc//fastcgi-prog-guide/apaman.htm]],
+[[share/fcgi/doc//fastcgi-prog-guide/ch1intro.htm]],
+[[share/fcgi/doc//fastcgi-prog-guide/ch1inta1.gif]],
+[[share/fcgi/doc//fastcgi-prog-guide/cover.htm]],
+[[share/fcgi/doc//fastcgi-prog-guide/ch3perl.htm]],
+[[share/fcgi/doc//fastcgi-prog-guide/covera.gif]],
+[[share/fcgi/doc//fastcgi-prog-guide/ap_guide.htm]],
+[[share/fcgi/doc//fastcgi-prog-guide/ch2c.htm]],
+[[share/fcgi/doc//fastcgi-prog-guide/ap_guida.htm]],
+[[share/fcgi/doc//fastcgi-prog-guide/ch4tcl.htm]],
+[[share/fcgi/doc//www5-api-workshop.html]],
+[[share/fcgi/doc//FCGI_Accept.3]],
+[[share/fcgi/doc//fcgi-java.htm]],
+[[share/fcgi/doc//FCGI_SetExitStatus.3]],
+[[share/fcgi/doc//omi-logo.gif]],
+[[share/fcgi/doc//fcgi-spec.html]],
+[[share/fcgi/doc//overview.html]],
+[[share/fcgi/doc//fcgi-devel-kit.htm]],
+[[share/fcgi/doc//cgi-fcgi.1]],
+[[share/fcgi/doc//fcgi-perl.htm]],
+}
+,
+Data = {
+[[share/fcgi/LICENSE.TERMS]],
+}
+,
+Example = {
+[[share/fcgi/example//Makefile.am]],
+[[share/fcgi/example//size.c]],
+[[share/fcgi/example//echox.mak]],
+[[share/fcgi/example//echo-cpp.mak]],
+[[share/fcgi/example//Makefile.in]],
+[[share/fcgi/example//log-dump.c]],
+[[share/fcgi/example//echo-cpp.cpp]],
+[[share/fcgi/example//echo-x.c]],
+[[share/fcgi/example//size.mak]],
+[[share/fcgi/example//echo.c]],
+[[share/fcgi/example//authorizer.mak]],
+[[share/fcgi/example//echo.mak]],
+[[share/fcgi/example//threaded.c]],
+[[share/fcgi/example//authorizer.c]],
+}
+,
+}
+
+license = "Open Market"
+url = "http://www.fastcgi.com"
+version = "2.4.0"
